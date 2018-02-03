@@ -12,15 +12,15 @@ end
 config :learn_ecto, ecto_repos: [LearnEcto.Repo]
 
 config :learn_ecto, LearnEcto.Repo,
-  adapter: Ecto.Adapters.Postgres
-
-config :learn_ecto, LearnEcto.Repo,
   adapter: Ecto.Adapters.Postgres,
   database: "ecto_simple",
   username: "postgres",
   password: "postgres",
   hostname: "localhost",
-  port: "5432"
+  port: "5432",
+  pool: Ecto.Adapters.SQL.Sandbox,
+  timeout: 100_000,
+  pool_timeout: 100_000
 # This configuration is loaded before any dependency and is restricted
 # to this project. If another project depends on this project, this
 # file won't be loaded nor affect the parent project. For this reason,

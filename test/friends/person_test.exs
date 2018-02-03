@@ -1,5 +1,5 @@
 defmodule PersonTest do
-  use ExUnit.Case
+  use LearnEcto.DataCase
 
   test "Can insert a person" do
     person = %Friends.Person{}
