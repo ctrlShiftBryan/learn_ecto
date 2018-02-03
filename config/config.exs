@@ -1,7 +1,25 @@
 # This file is responsible for configuring your application
 # and its dependencies with the aid of the Mix.Config module.
 use Mix.Config
+if Mix.env == :dev do
+  config :mix_test_watch,
+    tasks: [
+      "test --stale"
+    ]
+end
 
+config :learn_ecto, ecto_repos: [Sample.Repo]
+
+config :learn_ecto, LearnEcto.Repo,
+  adapter: Ecto.Adapters.Postgres
+
+config :learn_ecto, LearnEcto.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  database: "ecto_simple",
+  username: "postgres",
+  password: "postgres",
+  hostname: "localhost",
+  port: "5432"
 # This configuration is loaded before any dependency and is restricted
 # to this project. If another project depends on this project, this
 # file won't be loaded nor affect the parent project. For this reason,
