@@ -8,7 +8,7 @@ if Mix.env == :dev do
     ]
 end
 
-config :learn_ecto, ecto_repos: [Sample.Repo]
+config :learn_ecto, ecto_repos: [LearnEcto.Repo]
 
 config :learn_ecto, LearnEcto.Repo,
   adapter: Ecto.Adapters.Postgres

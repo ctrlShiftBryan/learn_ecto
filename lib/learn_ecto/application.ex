@@ -8,6 +8,7 @@ defmodule LearnEcto.Application do
   def start(_type, _args) do
     # List all child processes to be supervised
     children = [
+      LearnEcto.Repo
       # Starts a worker by calling: LearnEcto.Worker.start_link(arg)
       # {LearnEcto.Worker, arg},
     ]
