@@ -12,4 +12,9 @@ defmodule Friends.Person do
     |> Ecto.Changeset.cast(params, [:first_name, :last_name, :age])
     |> Ecto.Changeset.validate_required([:first_name, :last_name])
   end
+
+  def delete_changeset(person, params \\ %{}) do
+    person
+    |> Ecto.Changeset.cast(params, [:first_name, :last_name, :age, :id])
+  end
 end

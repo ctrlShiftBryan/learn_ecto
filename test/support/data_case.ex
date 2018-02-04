@@ -29,7 +29,6 @@ defmodule LearnEcto.DataCase do
     :ok = Ecto.Adapters.SQL.Sandbox.checkout(LearnEcto.Repo)
 
     unless tags[:async] do
-      IO.inspect "---------- async"
       Ecto.Adapters.SQL.Sandbox.mode(LearnEcto.Repo, {:shared, self()})
     end
 
